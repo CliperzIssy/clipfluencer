@@ -1,0 +1,366 @@
+/* Professional Video Timeline Styles */
+
+/* Override default timeline styles for black/white theme */
+.timeline-editor {
+  background: #000000 !important;
+  color: #ffffff !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  height: 100% !important;
+}
+
+.timeline-editor-edit-row {
+  background: #000000 !important;
+  border-bottom: 1px solid #333333 !important;
+}
+
+.timeline-editor-edit-row:hover {
+  background: #1a1a1a !important;
+}
+
+.timeline-editor-edit-row-name {
+  color: #ffffff !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+/* Timeline ruler/scale - make more visible */
+.timeline-editor-time-unit {
+  background: #000000 !important;
+  border-bottom: 2px solid #ffffff !important;
+  color: #ffffff !important;
+  min-height: 35px !important;
+  z-index: 50 !important;
+}
+
+.timeline-editor-scale-unit {
+  border-right: 1px solid #555555 !important;
+  opacity: 1 !important;
+}
+
+.timeline-editor-scale-text {
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  padding: 6px 8px !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Library uses .timeline-editor-time-unit-scale for the time numbers */
+.timeline-editor-time-unit-scale {
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  padding: 6px 8px !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure all text in scale units is visible */
+.timeline-editor-scale-unit * {
+  color: #ffffff !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.timeline-editor-time-unit * {
+  color: #ffffff !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.timeline-editor-time-unit-scale * {
+  color: #ffffff !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Cursor/Playhead - White scrubber like example */
+/* Library uses border-left and border-right for the cursor line, not background */
+.timeline-editor-cursor {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border-left: 1px solid #ffffff !important;
+  border-right: 1px solid #ffffff !important;
+  border-left-color: #ffffff !important;
+  border-right-color: #ffffff !important;
+  width: 2px !important;
+  z-index: 100 !important;
+}
+
+.timeline-editor-cursor-top {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  border-color: #ffffff !important;
+  width: 12px !important;
+  height: 20px !important;
+  border-radius: 2px !important;
+}
+
+/* Force cursor line to be white everywhere */
+.timeline-editor-cursor-area .timeline-editor-cursor {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border-left-color: #ffffff !important;
+  border-right-color: #ffffff !important;
+}
+
+.timeline-editor-cursor-area .timeline-editor-cursor * {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+/* Action/Segment styles */
+.timeline-editor-action {
+  border-radius: 4px !important;
+  transition: all 0.2s !important;
+  transform: translateY(0) !important; /* Keep segments aligned */
+}
+
+.timeline-editor-action:hover {
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
+  transform: translateY(0) !important;
+}
+
+.timeline-editor-action-selected {
+  box-shadow: 0 0 0 3px #ffffff !important;
+  border: 3px solid #ffffff !important;
+  overflow: visible !important;
+}
+
+/* Ensure selected segments show all borders */
+.timeline-editor-action-selected .timeline-action {
+  overflow: visible !important;
+}
+
+/* Style resize handles with white line indicators */
+.timeline-editor-action-left-stretch,
+.timeline-editor-action-right-stretch {
+  width: 12px !important;
+  background: transparent !important;
+  transition: background 0.2s !important;
+  position: absolute !important;
+  top: 0 !important;
+  height: 100% !important;
+  cursor: ew-resize !important;
+  z-index: 10 !important;
+  pointer-events: all !important;
+}
+
+.timeline-editor-action-left-stretch {
+  left: 0 !important;
+}
+
+.timeline-editor-action-right-stretch {
+  right: 0 !important;
+}
+
+/* Hide library default indicators */
+.timeline-editor-action-left-stretch::after,
+.timeline-editor-action-right-stretch::after {
+  display: none !important;
+  content: none !important;
+  border: none !important;
+}
+
+/* White line grab indicator on left edge */
+.timeline-editor-action-left-stretch::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 20% !important;
+  bottom: 20% !important;
+  width: 2px !important;
+  height: 60% !important;
+  transform: translateX(-50%) !important;
+  background: #ffffff !important;
+  border-radius: 1px !important;
+  pointer-events: none !important;
+  box-shadow: 0 0 4px rgba(0,0,0,0.5) !important;
+}
+
+/* White line grab indicator on right edge */
+.timeline-editor-action-right-stretch::before {
+  content: '' !important;
+  position: absolute !important;
+  right: 50% !important;
+  top: 20% !important;
+  bottom: 20% !important;
+  width: 2px !important;
+  height: 60% !important;
+  transform: translateX(50%) !important;
+  background: #ffffff !important;
+  border-radius: 1px !important;
+  pointer-events: none !important;
+  box-shadow: 0 0 4px rgba(0,0,0,0.5) !important;
+}
+
+.timeline-editor-action:hover .timeline-editor-action-left-stretch,
+.timeline-editor-action:hover .timeline-editor-action-right-stretch {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.timeline-editor-action-left-stretch:hover,
+.timeline-editor-action-right-stretch:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Grid lines */
+.timeline-editor-vertical-line {
+  border-left: 1px solid #374151 !important;
+  opacity: 0.3 !important;
+}
+
+/* Hide drag lines - trimming should only be done by segment edges */
+.timeline-editor-drag-line {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.timeline-editor-drag-line-handler {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide any top/bottom resize handles - only left/right should work */
+.timeline-editor-action-top-stretch,
+.timeline-editor-action-bottom-stretch {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Disable any vertical resizing */
+.timeline-editor-action[data-resizable="true"] {
+  resize: horizontal !important;
+}
+
+/* Scrollbar styles */
+.timeline-editor-edit-area::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.timeline-editor-edit-area::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+.timeline-editor-edit-area::-webkit-scrollbar-thumb {
+  background: #555555;
+  border-radius: 4px;
+}
+
+.timeline-editor-edit-area::-webkit-scrollbar-thumb:hover {
+  background: #777777;
+}
+
+/* Custom timeline action content */
+.timeline-action {
+  position: relative;
+  user-select: none;
+}
+
+.timeline-action::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Row headers */
+.timeline-editor-left-gutter {
+  background: #000000 !important;
+  border-right: 1px solid #333333 !important;
+  width: 60px !important;
+}
+
+.timeline-editor-left-gutter-area {
+  background: #000000 !important;
+}
+
+/* Ensure single row layout - Height is now controlled by container */
+.timeline-editor-edit-row {
+  height: 100% !important;
+  min-height: 80px !important;
+}
+
+/* Hide any additional rows or empty space below segments */
+.timeline-editor-edit-row:not(:first-child) {
+  display: none !important;
+}
+
+/* Force only one row visible */
+.timeline-editor-edit-area > *:not(:first-child) {
+  display: none !important;
+}
+
+/* Hide empty space or additional rows */
+.timeline-editor-edit-area > div:nth-child(n+2) {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Ensure edit area only shows one row - height controlled by container */
+.timeline-editor-edit-area {
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+  min-width: 20000px !important; /* VERY WIDE timeline canvas to fill the gap */
+  width: 100% !important;
+  height: 100% !important;
+  padding-bottom: 5px !important; /* Extra space for bottom border */
+}
+
+/* Prevent vertical dragging - keep segments on single row */
+.timeline-editor-action-wrapper {
+  transform: translateY(0) !important;
+  top: 5px !important;
+  height: calc(100% - 10px) !important;
+  position: absolute !important;
+  overflow: visible !important;
+}
+
+/* Force single row for actions */
+.timeline-editor-action {
+  position: absolute !important;
+  top: 0 !important;
+  height: 100% !important;
+  overflow: visible !important;
+}
+
+/* Make sure resize handles are always on top and clickable */
+.timeline-editor-action > .timeline-editor-action-left-stretch,
+.timeline-editor-action > .timeline-editor-action-right-stretch {
+  pointer-events: all !important;
+  z-index: 100 !important;
+  position: absolute !important;
+}
+
+/* Center content should not block resize handles at edges */
+.timeline-editor-action > div:not(.timeline-editor-action-left-stretch):not(.timeline-editor-action-right-stretch) {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Let library handle resize handles completely */
+
+/* Make segments easier to drag */
+.timeline-editor-action {
+  cursor: move !important;
+  user-select: none !important;
+}
+
+.timeline-editor-action-dragging {
+  opacity: 0.8 !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3) !important;
+  z-index: 1000 !important;
+}
